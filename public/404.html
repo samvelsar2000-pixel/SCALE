@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SCALE Redirect</title>
+  </head>
+  <body>
+    <script>
+      (function () {
+        var segment = location.pathname.replace(/^\/SCALE\/?/, '');
+        var search = location.search || '';
+        var hashPath = segment ? segment + search : search;
+        location.replace('/SCALE/#/' + hashPath.replace(/^\//, ''));
+      })();
+    </script>
+  </body>
+</html>
